@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ml-service"
+version = "0.1.0"
+description = ""
+authors = ["SerafimaK <srfm.muz@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2"
+jupyter = "^1.0.0"
+notebook = "^7.0.6"
+ipykernel = "^6.28.0"
+scikit-learn = "^1.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
