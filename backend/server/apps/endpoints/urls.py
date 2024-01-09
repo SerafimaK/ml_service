@@ -1,4 +1,10 @@
-from apps.endpoints.views import EndpointViewSet, MLAlgorithmStatusViewSet, MLAlgorithmViewSet, MLRequestViewSet
+from apps.endpoints.views import (
+    EndpointViewSet,
+    MLAlgorithmStatusViewSet,
+    MLAlgorithmViewSet,
+    MLRequestViewSet,
+    PredictView,
+)
 from django.urls import include, re_path
 from rest_framework.routers import DefaultRouter
 
@@ -10,4 +16,5 @@ router.register(r"mlrequests", MLRequestViewSet, basename="mlrequests")
 
 urlpatterns = [
     re_path(r"^api/v1/", include(router.urls)),
+    re_path(r"^api/v1/(?P<endpoint_name>.+)/predict$", PredictView.as_view(), name="predict"),
 ]
