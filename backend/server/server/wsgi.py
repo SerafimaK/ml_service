@@ -1,14 +1,15 @@
-import inspect
 import os
 
-from apps.ml.income_classifier.extra_trees import ExtraTreesClassifier
-from apps.ml.income_classifier.random_forest import RandomForestClassifier
-from apps.ml.registry import MLRegistry
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "server.settings")
 application = get_wsgi_application()
 
+import inspect  # noqa: E402
+
+from apps.ml.income_classifier.extra_trees import ExtraTreesClassifier  # noqa: E402
+from apps.ml.income_classifier.random_forest import RandomForestClassifier  # noqa: E402
+from apps.ml.registry import MLRegistry  # noqa: E402
 
 try:
     registry = MLRegistry()  # create ML registry
